@@ -1,0 +1,463 @@
+   /* General Reset */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+  }
+  
+  .navbar {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+    background-color: #343a40 !important;
+}
+
+.nav-link {
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ff5722 !important;
+}
+
+.dropdown-menu {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Hero section  */
+
+.hero-section {
+    background: url('https://wallpapercave.com/wp/wp7039156.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff5722;
+}
+  /* Header */
+  header {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Main Section */
+  main {
+    padding: 2rem;
+  }
+  
+  .upload-section, .result-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: center;
+  }
+  
+  .upload-section h2, .result-section h2 {
+    margin-bottom: 1rem;
+  }
+  
+  input[type="file"] {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  button {
+    background: #2575fc;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+  }
+  
+  button:hover:not(:disabled) {
+    background: #6a11cb;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .image-container img {
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #6a11cb;
+    color: #fff;
+  }
+  .welcome-area {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('/api/placeholder/1920/1080');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.main-heading {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    animation: slideUp 1s ease;
+}
+
+.sub-heading {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    animation: slideUp 1s ease 0.3s;
+    animation-fill-mode: both;
+}
+
+.doc-uploader {
+    background: white;
+    border-radius: 15px;
+    padding: 3rem;
+    margin: 50px auto;
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.uploader-heading {
+    color: #333;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.drop-area:hover {
+    border-color: #2193b0;
+    background: #f0f2f5;
+}
+
+.upload-symbol {
+    font-size: 3rem;
+    color: #2193b0;
+    margin-bottom: 1rem;
+}
+
+.action-button {
+    background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+    border: none;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+}
+
+.action-button:disabled {
+    background: #ccc;
+    transform: none;
+}
+
+.status-text {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.output-section {
+    background: #f8f9fa;
+    padding: 3rem 0;
+    display: none;
+}
+
+.complete-icon {
+    font-size: 4rem;
+    color: #28a745;
+    margin-bottom: 1rem;
+}
+
+.download-button {
+    background: #28a745;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.download-button:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+.bottom-bar {
+    background: #2193b0;
+    color: white;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* pdf to jpg    */
+.landing-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                url('/api/placeholder/1920/1080');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+}
+
+.landing-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease;
+}
+
+.landing-description {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    animation: fadeInUp 1s ease 0.3s;
+    animation-fill-mode: both;
+}
+
+.converter-box {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    margin: 50px auto;
+    max-width: 800px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.format-selector {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.format-option {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    margin: 0.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #6366f1;
+    color: #6366f1;
+}
+
+.format-option.active {
+    background: #6366f1;
+    color: white;
+}
+
+.dropzone {
+    border: 3px dashed #e2e2e2;
+    border-radius: 15px;
+    padding: 3rem;
+    text-align: center;
+    background: #fafafa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dropzone:hover {
+    border-color: #6366f1;
+    background: #f8f9fa;
+}
+
+.upload-icon {
+    font-size: 4rem;
+    color: #6366f1;
+    margin-bottom: 1rem;
+}
+
+.convert-btn {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    border: none;
+    padding: 1rem 3rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.convert-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+.convert-btn:disabled {
+    background: #ccc;
+    transform: none;
+    box-shadow: none;
+}
+
+.status-text {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.result-preview {
+    background: #f8f9fa;
+    padding: 3rem 0;
+    display: none;
+}
+
+.success-checkmark {
+    font-size: 4rem;
+    color: #10b981;
+    margin-bottom: 1rem;
+}
+
+.download-btn {
+    background: #10b981;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
+
+.features-section {
+    padding: 5rem 0;
+    background: #f8f9fa;
+}
+
+.feature-card {
+    padding: 2rem;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #6366f1;
+    margin-bottom: 1rem;
+}
+
+.app-footer {
+    background: #1f2937;
+    color: white;
+    padding: 2rem 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
